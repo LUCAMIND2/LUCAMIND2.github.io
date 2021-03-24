@@ -1,0 +1,191 @@
+html, body {
+  background-color: rgb(255,255,255);
+  margin: 0;
+  height: 100%;
+}
+/* HEADER */
+#header {
+ background-color: rgb(0,0,255);
+ width: 100%;
+ height: 100px;
+ position: fixed;
+ top: 0;
+ padding-left: 20px;
+}
+#header h1 a {
+  color: white;
+}
+/* HEADER MENU TEXT (desktop) */
+#menu-text, #menu-hamburger {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+#menu-hamburger {
+  padding-right: 20px;
+  display: none;
+}
+/* UL zonder 'padding' en ' list styling' */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* LI horizontaal tekst menu */
+li {
+  display: inline-block;
+  float: left;
+  margin-right: 1px;
+}
+/* LI menu links */
+li a {
+  display: block;
+  min-width: 160px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-family: "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgb(255,255,255);
+  background: rgb(30,30,30);
+  text-decoration: none;
+}
+/* Maak de 'dropdown' 'sub level' links onzichtbaar */
+li ul {
+    display: none;
+}
+/* Toon de 'dropdown' 'sub level' links bij een 'hover' */
+ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+}
+/* Maak de 'dropdown' 'sub level' links vertikaal */
+li ul li {
+    display: block;
+    float: none;
+}
+/* Stijl de 'dropdown' 'sub level' links */
+li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+/* 'Hover' voor 'top level' links */
+li:hover a {
+    background: #19c589;
+}
+/* Dropdown links 'sub level' links */
+li:hover ul a {
+    background: #f3f3f3;
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px;
+}
+/* Hover status voor 'dropdown' 'sub level' links */
+li:hover ul a:hover {
+    background: #19c589;
+    color: #fff;
+}
+
+/* MENU label 'button' en onzichtbaar */
+.show-menu {
+    padding: 10px 0;
+    display: block;
+    cursor: pointer;
+}
+/* MENU (mobile) HAMBURGER */
+.bar1, .bar2, .bar3 {
+  width: 33px;
+  height: 6px;
+  background-color: #eeeeee;
+  margin: 6px 6px 0 16px;
+}
+/* Maak 'checkbox' onzichtbaar */
+input[type=checkbox]{
+  display: none;
+}
+/* Toon menu wanneer de onzichtbare 'checkbox' aangeklikt is */
+input[type=checkbox]:checked ~ #menu-text {
+  display: block;
+}
+
+/* CONTENT */
+.content {
+  /* background-color: rgb(0,255,0); */
+  width: 90%;
+  height: 100vh; /* BELANGRIJK voor onepager */
+  margin-top: 0px;
+  /* padding: 40vh; */
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.content h1 {
+  font-family: "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9em;
+  color: rgb(255,255,255);
+}
+.content_1 {
+  background-color: rgb(0,255,0);
+}
+.content_1 h1 {
+  padding-top: 100px;
+}
+.content_2 {
+  background-color: rgb(100,200,0);
+}
+.content_3 {
+  background-color: rgb(150,150,0);
+}
+.content_4 {
+  background-color: rgb(200,100,0);
+}
+
+/* FOOTER */
+#footer {
+  background-color: rgb(255,0,0);
+  width: 100%;
+  height: 60px;
+}
+
+/* RESPONSIVE (mobile) */
+@media screen and (max-width : 840px){
+  /* MENU responsive mobile */
+  #menu-text {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    padding-right: 0;
+  }
+  #menu-hamburger {
+    padding-right: 20px;
+    display: block;
+  }
+  /* Zorg dat de 'dropdown' 'top level' links 'inline' zijn */
+  ul {
+      position: static;
+      display: none;
+  }
+  /* MENU items vetikale ruimte */
+  li {
+    margin-bottom: 1px;
+  }
+  /* Al de 'menu' links volle wijdte */
+  ul li, li a {
+    width: 100%;
+  }
+  /* Toon 'Menu' link */
+  .show-menu {
+      display:block;
+  }
+  /* CONTENT responsive mobile */
+  .content h1 {
+    font-size: 5em;
+    color: rgb(255,255,255);
+  }
+  img {
+    width: 100%;
+  }
+  /* FOOTER */
+  #footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
